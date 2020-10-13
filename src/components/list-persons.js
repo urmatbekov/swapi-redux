@@ -11,6 +11,7 @@ import {connect} from "react-redux";
 
 import {getPersons} from "../actions/actions";
 import withSwapiApi from "../providers/with-swapi-api";
+import persons from "../reduce/persons";
 
 
 const useStyles = makeStyles({
@@ -63,7 +64,7 @@ const ListPersons = ({persons = [],getPersons,loading}) => {
 }
 
 
-const mapStateToProps = ({data,loading,error}) => {
+const mapStateToProps = ({persons: {data, loading, error}}) => {
     return {persons:data,loading,error}
 }
 
